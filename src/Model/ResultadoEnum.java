@@ -1,30 +1,37 @@
 package Model;
 
 public class ResultadoEnum {
-	public String ganador;
-	public String perdedor;
-	public String empate;
-	public ResultadoEnum() {
+    public String ganador;
+    public String perdedor;
+    public String empate;
+
+    public ResultadoEnum() {
 		super();
-	}
-	public String getGanador() {
+    }
+
+    public String getGanador() {
 		return ganador;
-	}
-	public void setGanador(String ganador) {
+    }
+
+    public void setGanador(String ganador) {
 		this.ganador = ganador;
-	}
-	public String getPerdedor() {
+    }
+
+    public String getPerdedor() {
 		return perdedor;
-	}
-	public void setPerdedor(String perdedor) {
+    }
+
+    public void setPerdedor(String perdedor) {
 		this.perdedor = perdedor;
-	}
-	public String getEmpate() {
+    }
+
+    public String getEmpate() {
 		return empate;
-	}
-	public void setEmpate(String empate) {
+    }
+
+    public void setEmpate(String empate) {
 		this.empate = empate;
-	}
-	
+    }
+
 
 }
