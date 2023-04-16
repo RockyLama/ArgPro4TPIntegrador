@@ -5,6 +5,7 @@ public class Partido {
     private int golesEquipo2;
     private Equipo equipo1 = new Equipo();
     private Equipo equipo2 = new Equipo();
+    private Equipo equipo5 = new Equipo();
 
     public Partido() {
         super();
