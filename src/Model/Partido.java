@@ -5,7 +5,11 @@ public class Partido {
     private int golesEquipo2;
     private Equipo equipo1 = new Equipo();
     private Equipo equipo2 = new Equipo();
+<<<<<<< HEAD
     private Equipo equipo3 = new Equipo();
+=======
+    private Equipo equipo5 = new Equipo();
+>>>>>>> refs/remotes/origin/Pablo
 
     public Partido() {
         super();
