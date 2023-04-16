@@ -6,7 +6,6 @@ public class Partido {
     private Equipo equipo1 = new Equipo();
     private Equipo equipo2 = new Equipo();
 
-
     public Partido() {
         super();
     }
@@ -42,9 +41,24 @@ public class Partido {
     public void setEquipo2(Equipo equipo2) {
         this.equipo2 = equipo2;
     }
-
-    public Equipo resultado(Equipo equipo) {
-        return equipo;
+    //*********************************
+// Optimozar codigo
+    //*************************************
+    
+    public ResultadoEnum resultado(Equipo equipo1) {
+    	if(golesEquipo1 > golesEquipo2) {
+    		ResultadoEnum Resultado = new ResultadoEnum();
+    		Resultado.getGanador();   		
+    	}
+    	else if(golesEquipo1 < golesEquipo2){
+    		ResultadoEnum Resultado = new ResultadoEnum();
+    		Resultado.getPerdedor();   		
+    	}
+    	else if(golesEquipo1 == golesEquipo2){
+    		ResultadoEnum Resultado = new ResultadoEnum();
+    		Resultado.getEmpate();
+		}
+    	  return resultado(equipo1);   
     }
 
 }

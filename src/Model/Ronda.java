@@ -4,7 +4,6 @@ public class Ronda {
     private String nro;
     private int cant = 0;
     private Partido partidos[] = new Partido[cant];
-    private String gane;
 
     public Ronda() {
 		super();
@@ -33,7 +32,7 @@ public class Ronda {
     public void setPartidos(Partido[] partidos) {
 		this.partidos = partidos;
     }
-
+//para que es este metodo?
     public Integer puntos() {
         Integer puntos = 0;
         return puntos;
