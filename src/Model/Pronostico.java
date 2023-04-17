@@ -4,7 +4,8 @@ public class Pronostico {
     Equipo equipo1 = new Equipo();
     Equipo equipo2 = new Equipo();
     Partido partido = new Partido();
-    ResultadoEnum resultado = new ResultadoEnum();
+    ResultadoEnum resultadopro = new ResultadoEnum();
+    Partido partidofinal = new Partido();
 
     public Pronostico() {
 		super();
@@ -35,16 +36,26 @@ public class Pronostico {
     }
 
     public ResultadoEnum getResultado() {
-		return resultado;
+		return resultadopro;
     }
 
     public void setResultado(ResultadoEnum resultado) {
-		this.resultado = resultado;
+		this.resultadopro = resultado;
     }
+    
+    
 
     public Integer puntos() {
-        Integer puntos = 0;
-        return puntos;
+    	ResultadoEnum ResultadoPartido = new ResultadoEnum();
+		ResultadoEnum ResultadoPronostico = new ResultadoEnum();
+		int puntosPronostico = 0;
+		
+		if(ResultadoPartido == ResultadoPronostico) {
+			puntosPronostico+=1;
+		}
+		
+		System.out.println("Puntaje obtenido: " + puntosPronostico);
+        return puntosPronostico;
     }
 
 }
