@@ -1,0 +1,2 @@
+Argentina;Francia;3;2
+Brasil;Portugal;4;1
