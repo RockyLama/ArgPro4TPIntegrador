@@ -3,12 +3,11 @@ package Model;
 public class Equipo {
     String nombre;
     String descripcion;
-
-    public Equipo() {
-
+  
+	public Equipo() {
 		super();
-    }
-    public String getNombre() {
+	}
+	public String getNombre() {
 
 		return nombre;
     }
