@@ -4,6 +4,7 @@ import java.io.*;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -11,26 +12,29 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		String rutaPartido="C:\\...";
+		
+		
+		String rutaPartido="C:\\Users\\lamad\\git\\ArgPro4TPIntegrador\\Partidos.txt";
 		
 		System.out.println("....... Leyendo archivo y creando objetos ......\n" + "\n ......");
 		
-		ScannerClass(rutaPartido);
+		//ScannerClass(rutaPartido);
 		
-		String rutaPronostico="C:\\...";
+		String rutaPronostico="C:\\Users\\lamad\\git\\ArgPro4TPIntegrador\\Pronosticos.txt";
 		
 		System.out.println("....... Leyendo archivo y creando objetos ......\n" + "\n ......");
 		
-		ScannerClass(rutaPartido);
-		ScannerClass(rutaPronostico);
+		ArrayList<Partido> partidos = new  ArrayList<>();
+				partidos.leerArchivo(rutaPartido);
+		ArrayList<Partido> leerArchivo(rutaPronostico);
 		
-		
+		ArrayList<Partido> pronosticos = new ArrayList<>();
 		
 	}
 		
-		public static void ScannerClass(String ruta)
-		{
-			int Line=1;
+		public ArrayList<Partido> leerArchivo(String ruta){
+			ArrayList<Partido> partidos = new ArrayList<>();
+			//int Line=1;
 			String equipo1;
 			String gol1;
 			String equipo2;
@@ -51,21 +55,27 @@ public class Main {
 			gol1=VectorString[2];
 			gol2=VectorString[3];
 			
-			Partido partidofinish = new Partido();
 			
-			Equipo equipo1Obj = new Equipo();
+			Equipo equipo1Obj = new Equipo(equipo1, gol1);
 			equipo1Obj.setNombre(equipo1);
-			Equipo equipo2Obj = new Equipo();
+			equipo1Obj.setGol(gol1);
+			Equipo equipo2Obj = new Equipo(equipo2, gol2);
 			equipo2Obj.setNombre(equipo2);
+			equipo2Obj.setGol(gol2);
 			
-			partidofinish.golesEquipo1=gol1;
-			partidofinish.golesEquipo2=gol2;
+			Partido partidofinish = new Partido();
+			partidofinish.setEquipo1(equipo1Obj);
+			partidofinish.setEquipo2(equipo2Obj);
 			
-			partidofinish.resultado(equipo1Obj, gol1, gol2);
+			partidofinish.resultado(equipo1Obj, equipo2Obj);
 			
-			System.out.println("resultdo obtenido: " + partidofinish);
+			partidos.add(partidofinish);
 			
-			Line+=1;
+			
+			/*String uno = partidofinish.resultado(equipo1Obj, equipo2Obj).toString();
+			System.out.println("resultdo obtenido: " + uno);*/
+			
+			//Line+=1;
 			
 		}
 		
@@ -73,7 +83,7 @@ public class Main {
 			catch (IOException e) {
 				e.printStackTrace();
 				}
-
+			return partidos;
 		}
 		
 		

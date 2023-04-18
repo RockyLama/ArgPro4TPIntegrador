@@ -2,10 +2,14 @@ package Model;
 
 public class Equipo {
     String nombre;
-    String descripcion;
+    String gol;
   
-	public Equipo() {
+	
+    
+	public Equipo(String nombre, String gol) {
 		super();
+		this.nombre = nombre;
+		this.gol = gol;
 	}
 	public String getNombre() {
 
@@ -16,12 +20,12 @@ public class Equipo {
 		this.nombre = nombre;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getGol() {
+        return gol;
     }
-    public void setDescripcion(String descripcion) {
+    public void setGol(String descripcion) {
 
-		this.descripcion = descripcion;
+		this.gol = descripcion;
     }
 
 }
