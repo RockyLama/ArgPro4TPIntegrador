@@ -11,28 +11,42 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		
-		
-		
-		String rutaPartido="C:\\Users\\lamad\\git\\ArgPro4TPIntegrador\\Partidos.txt";
-		
+
+		String rutaPartido = "C:\\Users\\lamad\\git\\ArgPro4TPIntegrador\\Partidos.txt";
+
 		System.out.println("....... Leyendo archivo y creando objetos ......\n" + "\n ......");
-		
-		//ScannerClass(rutaPartido);
-		
-		String rutaPronostico="C:\\Users\\lamad\\git\\ArgPro4TPIntegrador\\Pronosticos.txt";
-		
+
+		// ScannerClass(rutaPartido);
+
+		String rutaPronostico = "C:\\Users\\lamad\\git\\ArgPro4TPIntegrador\\Pronosticos.txt";
+
 		System.out.println("....... Leyendo archivo y creando objetos ......\n" + "\n ......");
-		
-		ArrayList<Partido> partidos = new  ArrayList<>();
-				partidos.leerArchivo(rutaPartido);
-		ArrayList<Partido> leerArchivo(rutaPronostico);
-		
+
+		/*ArrayList<Partido> partidos = new ArrayList<>();
+		partidos.leerArchivo(rutaPartido);
+
 		ArrayList<Partido> pronosticos = new ArrayList<>();
+		pronosticos.leerArchivo(rutaPronostico);*/
+		
+		
+		
+		public void SelectPartido(ArrayList<Partido> partidos){
+			for(Partido p: partidos) {
+				System.out.println("Equipo1: " + p.getNombreEquipo1() + "Goles equipo1: " + p.getGolesEquipo1() +
+						"Equipo2: " + p.getNombreEquipo2() + "Goles equipo2: " + p.getGolesEquipo2() );
+			}
+		}
+		
+		
 		
 	}
+	
+	/*public void GetPartido(Partido p) {
+		for(Equipo e : )
+
+		}*/
 		
-		public ArrayList<Partido> leerArchivo(String ruta){
+		/*public ArrayList<Partido>leerArchivo(String ruta){
 			ArrayList<Partido> partidos = new ArrayList<>();
 			//int Line=1;
 			String equipo1;
@@ -59,6 +73,9 @@ public class Main {
 			Equipo equipo1Obj = new Equipo(equipo1, gol1);
 			equipo1Obj.setNombre(equipo1);
 			equipo1Obj.setGol(gol1);
+			
+			equipos.add(equipo1Obj);
+			
 			Equipo equipo2Obj = new Equipo(equipo2, gol2);
 			equipo2Obj.setNombre(equipo2);
 			equipo2Obj.setGol(gol2);
@@ -72,8 +89,11 @@ public class Main {
 			partidos.add(partidofinish);
 			
 			
-			/*String uno = partidofinish.resultado(equipo1Obj, equipo2Obj).toString();
-			System.out.println("resultdo obtenido: " + uno);*/
+			
+			
+			
+			String uno = partidofinish.resultado(equipo1Obj, equipo2Obj).toString();
+			System.out.println("resultdo obtenido: " + uno);
 			
 			//Line+=1;
 			
@@ -84,11 +104,12 @@ public class Main {
 				e.printStackTrace();
 				}
 			return partidos;
+		}*/
+		
+		
 		}
-		
-		
 				
 		
 		
-		}
+		
 

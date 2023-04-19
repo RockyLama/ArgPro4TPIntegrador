@@ -1,5 +1,11 @@
 package Model;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Partido {
     public String golesEquipo1;
     public String golesEquipo2;
@@ -7,6 +13,7 @@ public class Partido {
     public String nombreEquipo2;    
     private Equipo equipo1 = new Equipo(nombreEquipo1, golesEquipo1);
     private Equipo equipo2 = new Equipo(nombreEquipo2, golesEquipo2);
+    ArrayList<Equipo> equipos = new ArrayList<>();
 
     public Partido() {
         super();
@@ -99,6 +106,8 @@ public class Partido {
 		}
     	  return Resultado.toString();   
     }
+	
+
     
     
     
@@ -120,4 +129,60 @@ public class Partido {
     	  return Resultado.toString();   
     }*/
 
+	public ArrayList<Partido>leerArchivo(String ruta){
+		ArrayList<Partido> partidos = new ArrayList<>();
+		//int Line=1;
+		String equipo1;
+		String gol1;
+		String equipo2;
+		String gol2;
+		
+		File file = new File(ruta);
+		
+		//Partido partidofinish = new Partido();
+		
+		try (Scanner sc = new Scanner(file, StandardCharsets.UTF_8))
+		{
+		while (sc.hasNextLine()) 
+		{
+		String[] VectorString= (sc.nextLine()).split(";");
+		
+		equipo1=VectorString[0];
+		equipo2=VectorString[1];
+		gol1=VectorString[2];
+		gol2=VectorString[3];
+		
+		
+		Equipo equipo1Obj = new Equipo(equipo1, gol1);
+		equipo1Obj.setNombre(equipo1);
+		equipo1Obj.setGol(gol1);
+		
+		equipos.add(equipo1Obj);
+		
+		Equipo equipo2Obj = new Equipo(equipo2, gol2);
+		equipo2Obj.setNombre(equipo2);
+		equipo2Obj.setGol(gol2);
+		
+		equipos.add(equipo2Obj);
+		
+		Partido partidofinish = new Partido();
+		partidofinish.setEquipo1(equipo1Obj);
+		partidofinish.setEquipo2(equipo2Obj);
+		
+		partidofinish.resultado(equipo1Obj, equipo2Obj);
+		
+		partidos.add(partidofinish);
+		
+		//Line+=1;
+		
+	}
+	
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+			}
+		return partidos;
+	}
+	
+	
 }
