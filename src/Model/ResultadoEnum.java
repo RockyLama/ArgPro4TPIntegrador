@@ -1,23 +1,23 @@
 package Model;
 
 public class ResultadoEnum {
-    public String ganador;
-    public String perdedor;
-    public String empate;
+    public static String ganador="GANADOR";
+    public static String perdedor="PERDEDOR";
+    public static String empate="EMPATE";
 
-    public ResultadoEnum() {
+   public ResultadoEnum() {
 		super();
     }
 
-    public String getGanador() {
+    public static String getGanador() {
 		return ganador;
     }
 
-    public String getPerdedor() {
+    public static String getPerdedor() {
 		return perdedor;
     }
 
-    public String getEmpate() {
+    public static String getEmpate() {
 		return empate;
     }
 }
