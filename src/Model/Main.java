@@ -22,24 +22,19 @@ public class Main {
 
 		System.out.println("....... Leyendo archivo y creando objetos ......\n" + "\n ......");
 
-		/*ArrayList<Partido> partidos = new ArrayList<>();
-		partidos.leerArchivo(rutaPartido);
-
+		ArrayList<Partido> partidos = new ArrayList<>();
+		
+/*
 		ArrayList<Partido> pronosticos = new ArrayList<>();
 		pronosticos.leerArchivo(rutaPronostico);*/
 		
+		Ronda ronda1 = new Ronda();
+		
+	
 		
 		
-		public void SelectPartido(ArrayList<Partido> partidos){
-			for(Partido p: partidos) {
-				System.out.println("Equipo1: " + p.getNombreEquipo1() + "Goles equipo1: " + p.getGolesEquipo1() +
-						"Equipo2: " + p.getNombreEquipo2() + "Goles equipo2: " + p.getGolesEquipo2() );
-			}
 		}
 		
-		
-		
-	}
 	
 	/*public void GetPartido(Partido p) {
 		for(Equipo e : )

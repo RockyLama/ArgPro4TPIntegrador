@@ -175,6 +175,7 @@ public class Partido {
 		
 		//Line+=1;
 		
+		
 	}
 	
 		}
@@ -183,6 +184,15 @@ public class Partido {
 			}
 		return partidos;
 	}
+	
+	public void SelectPartido(ArrayList<Partido> partidos){
+		for(Partido p: partidos) {
+			System.out.println("Equipo1: " + p.getNombreEquipo1() + "Goles equipo1: " + p.getGolesEquipo1() +
+					"Equipo2: " + p.getNombreEquipo2() + "Goles equipo2: " + p.getGolesEquipo2() );
+		}
+	
+	
+}
 	
 	
 }
