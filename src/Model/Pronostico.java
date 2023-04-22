@@ -15,7 +15,7 @@ public class Pronostico {
 	private Equipo equipo1Usuario; // = new Equipo(nombreEquipo1, golesEquipo1);
 	private Equipo equipo2Usuario; // = new Equipo(nombreEquipo2, golesEquipo2);
 	//private Partido partidoUsuario; // = new Partido();
-	private ResultadoEnum resultadoproUsuario; // = new ResultadoEnum();
+	private ResultadoEnum resultadoproUsuario = new ResultadoEnum(); // = new ResultadoEnum();
 	// private Partido partidofinal = new Partido();
 	//ArrayList<Pronostico> pronosticos; // = new ArrayList<>();
 
@@ -82,26 +82,20 @@ public class Pronostico {
 	public ResultadoEnum resultado (String golesEquipo1Usuario, String golesEquipo2Usuario) {
 		int G1 = Integer.parseInt(golesEquipo1Usuario);
     	int G2 = Integer.parseInt(golesEquipo2Usuario);
+    	String Empato = "Empato";
+		String Perdio = "Perdio";
+		String Gano = "Gano";
 		if (G1==G2) {
-			resultadoproUsuario.empate = ResultadoEnum.getEmpate();
+			resultadoproUsuario.setEstado(Empato);
 		} else if (G1>G2){
-			resultadoproUsuario.ganador = ResultadoEnum.getGanador();
+			resultadoproUsuario.setEstado(Gano);
 		} else if (G1<G2){
-			resultadoproUsuario.perdedor = ResultadoEnum.getPerdedor();
+			resultadoproUsuario.setEstado(Perdio);
 		}
 		return resultadoproUsuario;
 	}
 
 
-	public Integer puntos(ResultadoEnum ResultadoPartido, ResultadoEnum ResultadoPronostico) {
-
-		int puntosPronostico = 0;
-		if (ResultadoPartido == ResultadoPronostico) {
-			puntosPronostico += 1;
-		}
-		System.out.println("Puntaje obtenido: " + puntosPronostico);
-		return puntosPronostico;
-	}
 
 	public ArrayList<Pronostico> leerArchivoUsuario(String ruta) {
 		
@@ -160,10 +154,14 @@ public class Pronostico {
 	public void SelectPronostico(ArrayList<Pronostico> pronosticos) {
 		System.out.println("****************** PRONOSTICOS *******************");				
 		for (int i= 0; i<pronosticos.size(); i++) {
-			System.out.println(" Equipo1: " + pronosticos.get(i).getNombreEquipo1Usuario() + "\n Goles equipo1: " + pronosticos.get(i).getGolesEquipo1Usuario()
-					+ "\n Equipo2: " + pronosticos.get(i).getGolesEquipo2Usuario() + "\n Goles equipo2: " + pronosticos.get(i).getGolesEquipo2Usuario() 
-					/*+ "\nResultado: " + p.resultado(p.getGolesEquipo1Usuario(), p.getGolesEquipo2Usuario())*/);
+			System.out.println(" Equipo1: " + pronosticos.get(i).equipo1Usuario.nombre + "\n Goles equipo1: " + pronosticos.get(i).equipo1Usuario.gol
+					+ "\n Equipo2: " + pronosticos.get(i).equipo2Usuario.nombre + "\n Goles equipo2: " + pronosticos.get(i).equipo2Usuario.gol 
+					+ "\n Resultado Pronosticado: " + pronosticos.get(i).resultadoproUsuario.estado + " " + pronosticos.get(i).equipo1Usuario.nombre);
+			System.out.println("******************------------------*******************");
+			System.out.println("******************------------------*******************");
 		}
 	}
+	
+
 
 }

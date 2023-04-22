@@ -1,1 +1,3 @@
-Argentina;Francia;2;4
+Argentina;Francia;3;2
+Uruguay;Brasil;7;1
+Colombia;Mexico;2;2

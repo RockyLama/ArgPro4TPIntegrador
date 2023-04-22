@@ -16,8 +16,8 @@ public class Main {
 		System.out.println("....... Leyendo archivo y creando objetos ......\n" + "\n ......");
 		
 		Partido partido = new Partido();
-		/*ArrayList<Partido> totalPartido = */;
-		partido.SelectPartido(partido.leerArchivo(rutaPartido));
+		ArrayList<Partido> totalPartidos = partido.leerArchivo(rutaPartido);
+		partido.SelectPartido(totalPartidos);
 
 
 		String rutaPronostico = "C:\\Users\\lamad\\git\\ArgPro4TPIntegrador\\Pronosticos.txt";
@@ -27,13 +27,23 @@ public class Main {
 		Pronostico pronosticos = new Pronostico();
 		ArrayList<Pronostico> totalPronosticos = pronosticos.leerArchivoUsuario(rutaPronostico);
 		pronosticos.SelectPronostico(totalPronosticos);
+		int puntosPronostico = 0;
+		for (int i= 0; i<totalPronosticos.size(); i++) {
+			puntos(totalPartidos.get(i).getfinalPartido(), totalPronosticos.get(i).getResultadoproUsuario()
+					, puntosPronostico);
+			}
+		System.out.println("Puntaje obtenido: " + puntosPronostico);
 		
 		/*for(int i= 0; i<totalPronosticos.size(); i++) {
-			pronosticos.puntos(partido.resultado(partido.getGolesEquipo1(), partido.getGolesEquipo2()),
-					pronosticos.resultado(pronosticos.getGolesEquipo1Usuario(), pronosticos.getGolesEquipo2Usuario()));
-		}*/
+			}*/
+	}
+	public static Integer puntos(ResultadoEnum ResultadoPartido, ResultadoEnum ResultadoPronostico/*, ArrayList<Pronostico> pronosticos*/, int puntosPronostico) {
+		//for (int i= 0; i<pronosticos.size(); i++) {
 		
-
+			if (ResultadoPartido.equals(ResultadoPronostico)) {
+			puntosPronostico += 1;
+		}
+		return puntosPronostico;
 	}
 
 }

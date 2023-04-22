@@ -14,7 +14,7 @@ public class Partido {
 	public String nombreEquipo2;
 	private Equipo equipo1; // = new Equipo(nombreEquipo1, golesEquipo1);
 	private Equipo equipo2; // = new Equipo(nombreEquipo2, golesEquipo2);
-	private ResultadoEnum finalPartido;
+	private ResultadoEnum finalPartido = new ResultadoEnum();
 	// ArrayList<Equipo> equipos = new ArrayList<>();
 
 	public Partido() {
@@ -88,12 +88,16 @@ public class Partido {
 	public ResultadoEnum resultado(String golesEquipo1, String golesEquipo2) {
 		int G1 = Integer.parseInt(golesEquipo1);
 		int G2 = Integer.parseInt(golesEquipo2);
+		String Empato = "Empato";
+		String Perdio = "Perdio";
+		String Gano = "Gano";
+		
 		if (G1 == G2) {
-			finalPartido.empate = ResultadoEnum.getEmpate();
+			finalPartido.setEstado(Empato);
 		} else if (G1 > G2) {
-			finalPartido.ganador = ResultadoEnum.getGanador();
+			finalPartido.setEstado(Gano);
 		} else if (G1 < G2) {
-			finalPartido.perdedor = ResultadoEnum.getPerdedor();
+			finalPartido.setEstado(Perdio);
 		}
 		return finalPartido;
 	}
@@ -147,6 +151,7 @@ public class Partido {
 				Equipo equipo1Obj = new Equipo(equipo1, gol1);
 				equipo1Obj.setNombre(equipo1);
 				equipo1Obj.setGol(gol1);
+				
 
 
 
@@ -161,8 +166,11 @@ public class Partido {
 				partidofinish.setEquipo1(equipo1Obj);
 				partidofinish.setEquipo2(equipo2Obj);
 				partidofinish.resultado(gol1, gol2);
+				
 
 				partidos.add(partidofinish);
+				
+				
 
 				id += 1;
 
@@ -177,8 +185,14 @@ public class Partido {
 	public void SelectPartido(ArrayList<Partido> partidos){
 		System.out.println("****************** PARTIDOS *******************");
 		for(int i= 0; i<partidos.size(); i++) {
-			System.out.println(" Equipo1: " + partidos.get(i).getNombreEquipo1() + "\n Goles equipo1: " + partidos.get(i).getGolesEquipo1()
-					+ "\n Equipo2: " + partidos.get(i).getGolesEquipo2() + "\n Goles equipo2: " + partidos.get(i).getGolesEquipo2() );
+			
+			System.out.println(" Equipo1: " + partidos.get(i).equipo1.nombre + "\n Goles equipo1: " + partidos.get(i).equipo1.gol
+					+ "\n Equipo2: " + partidos.get(i).equipo2.nombre + "\n Goles equipo2: " + partidos.get(i).equipo2.gol 
+					+ "\n Resultado: " + partidos.get(i).finalPartido.estado + " " + partidos.get(i).equipo1.nombre);
+			
+			
+			System.out.println("******************------------------*******************");
+			System.out.println("******************------------------*******************");
 		}
 	
 	
