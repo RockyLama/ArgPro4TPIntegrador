@@ -27,23 +27,25 @@ public class Main {
 		Pronostico pronosticos = new Pronostico();
 		ArrayList<Pronostico> totalPronosticos = pronosticos.leerArchivoUsuario(rutaPronostico);
 		pronosticos.SelectPronostico(totalPronosticos);
-		int puntosPronostico = 0;
+		//int puntosPronostico = 0;
 		for (int i= 0; i<totalPronosticos.size(); i++) {
-			puntos(totalPartidos.get(i).getfinalPartido(), totalPronosticos.get(i).getResultadoproUsuario()
-					, puntosPronostico);
+			puntos(totalPartidos, totalPronosticos);
 			}
-		System.out.println("Puntaje obtenido: " + puntosPronostico);
+		System.out.println("Puntaje obtenido: " + puntos(totalPartidos, totalPronosticos));
 		
 		/*for(int i= 0; i<totalPronosticos.size(); i++) {
 			}*/
 	}
-	public static Integer puntos(ResultadoEnum ResultadoPartido, ResultadoEnum ResultadoPronostico/*, ArrayList<Pronostico> pronosticos*/, int puntosPronostico) {
-		//for (int i= 0; i<pronosticos.size(); i++) {
+	public static Integer puntos(ArrayList<Partido> totalPartidos,ArrayList<Pronostico> totalPronosticos) {
+		int puntosPronostico = 0;
+		for (int i= 0; i<totalPartidos.size(); i++) {
 		
-			if (ResultadoPartido.equals(ResultadoPronostico)) {
+			if (totalPartidos.get(i).finalPartido.estado.equals(totalPronosticos.get(i).resultadoproUsuario.estado)) {
 			puntosPronostico += 1;
 		}
-		return puntosPronostico;
+		
+	}
+	return puntosPronostico;
 	}
 
 }
