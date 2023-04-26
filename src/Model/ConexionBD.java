@@ -4,6 +4,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.Properties;
 
 public class ConexionBD {
@@ -34,6 +37,29 @@ public class ConexionBD {
     		e.printStackTrace();
     	}
     	
+    }
+    
+    // Objeto del tipo Connection para crear la conexión
+    private Connection con;
+
+    public void Conexion()
+    {
+        try {
+            // Cargar drivers de MySQL
+            Class.forName(driver);
+
+            // Establecer la conexion con la base de datos
+            con = DriverManager.getConnection(servidor + DBname , username, password);
+
+            System.out.println("Conexión realizada a la base de datos con éxito.");
+        } catch (ClassNotFoundException | SQLException e) {
+            System.out.println("Error!, conexión fallida a la base de datos.");
+        }
+    }
+
+    public Connection getConnection() {
+    	Conexion();
+        return con; // Retorno el objeto Connection
     }
 
 }
