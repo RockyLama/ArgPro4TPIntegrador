@@ -1,20 +1,33 @@
 package Model;
 
+import java.util.ArrayList;
+
 public class Ronda {
-    private String nro;
-    private int cant = 0;
-    private Partido partidos[] = new Partido[cant];
+	public String nroRda;
+	public int cant = 0;
+	//public Partido partidos[] = new Partido[cant];
+	public ArrayList<Pronostico> rondaPronosticos = new ArrayList<>();
 
-    public Ronda() {
+  
+
+	public Ronda() {
 		super();
+    }  
+	
+	public ArrayList<Pronostico> getRondaPronosticos() {
+		return rondaPronosticos;
+	}
+
+	public void setRondaPronosticos(ArrayList<Pronostico> rondaPronosticos) {
+		this.rondaPronosticos = rondaPronosticos;
+	}
+
+    public String getNroRda() {
+		return nroRda;
     }
 
-    public String getNro() {
-		return nro;
-    }
-
-    public void setNro(String nro) {
-		this.nro = nro;
+    public void setNroRda(String nroRda) {
+		this.nroRda = nroRda;
     }
 
     public int getCant() {
@@ -25,13 +38,7 @@ public class Ronda {
 		this.cant = cant;
     }
 
-    public Partido[] getPartidos() {
-		return partidos;
-    }
 
-    public void setPartidos(Partido[] partidos) {
-		this.partidos = partidos;
-    }
 //para que es este metodo?
     public Integer puntos() {
         Integer puntos = 0;
