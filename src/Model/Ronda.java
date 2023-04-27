@@ -4,16 +4,14 @@ import java.util.ArrayList;
 
 public class Ronda {
 	public String nroRda;
-	public int cant = 0;
-	//public Partido partidos[] = new Partido[cant];
+	public String descripcion;
+	// public Partido partidos[] = new Partido[cant];
 	public ArrayList<Pronostico> rondaPronosticos = new ArrayList<>();
-
-  
 
 	public Ronda() {
 		super();
-    }  
-	
+	}
+
 	public ArrayList<Pronostico> getRondaPronosticos() {
 		return rondaPronosticos;
 	}
@@ -22,28 +20,27 @@ public class Ronda {
 		this.rondaPronosticos = rondaPronosticos;
 	}
 
-    public String getNroRda() {
+	public String getNroRda() {
 		return nroRda;
-    }
+	}
 
-    public void setNroRda(String nroRda) {
+	public void setNroRda(String nroRda) {
 		this.nroRda = nroRda;
-    }
+	}
 
-    public int getCant() {
-		return cant;
-    }
+	public String getDescripcion() {
+		return descripcion;
+	}
 
-    public void setCant(int cant) {
-		this.cant = cant;
-    }
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
 
+	// para que es este metodo?
+	public Integer puntos() {
+		Integer puntos = 0;
+		return puntos;
 
-//para que es este metodo?
-    public Integer puntos() {
-        Integer puntos = 0;
-        return puntos;
-
-    }
+	}
 
 }

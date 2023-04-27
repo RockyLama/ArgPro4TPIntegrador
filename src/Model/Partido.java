@@ -16,6 +16,7 @@ public class Partido {
 	public Equipo equipo1; // = new Equipo(nombreEquipo1, golesEquipo1);
 	public Equipo equipo2; // = new Equipo(nombreEquipo2, golesEquipo2);
 	public ResultadoEnum finalPartido = new ResultadoEnum();
+	public Ronda nroRonda = new Ronda();
 
 	public Partido() {
 		super();
@@ -83,6 +84,14 @@ public class Partido {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public Ronda getNroRonda() {
+		return nroRonda;
+	}
+
+	public void setNroRonda(Ronda nroRonda) {
+		this.nroRonda = nroRonda;
 	}
 
 	public ResultadoEnum resultado(String golesEquipo1, String golesEquipo2) {

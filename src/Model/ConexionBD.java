@@ -25,7 +25,7 @@ public class ConexionBD {
     ConexionBD(){
     	Properties properties = new Properties();
     	try {
-    		properties.load(new FileInputStream(new File("ConexString.properties")));
+    		properties.load(new FileInputStream(new File("Conex.properties")));
     		this.servidor= (String) properties.get("servidor");
     		this.DBname= (String) properties.get("DBname");
     		this.driver= (String) properties.get("driver");
